@@ -46,7 +46,7 @@ public class MainServlet extends HttpServlet {
                 return;
             }
 
-            if (method.equals(POST) && path.equals(PATH)) {
+            if (method.equals(POST) && path.equals(PATH) || path.matches(PATH_WITH_ID)) {
                 controller.save(req.getReader(), resp);
                 return;
             }
